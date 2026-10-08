@@ -63,6 +63,7 @@ a{color:inherit}
 .nav a:hover{background-size:100% 1px}
 .header .btn{min-height:44px;padding:.5rem 1.2rem;font-size:.72rem}
 .c-long{display:none}
+@media(max-width:360px){.header .btn{padding-left:1rem;padding-right:1rem}.logo img{max-width:150px;height:auto}}
 @media(min-width:940px){.nav{display:flex}.c-long{display:inline}.c-short{display:none}.logo img{height:52px}.header .wrap{min-height:96px}}
 
 /* reveal system */
@@ -317,6 +318,12 @@ fieldset{margin-bottom:1rem}
 #send{margin-top:.3rem}
 @media(min-width:940px){.inq{padding:5.5rem 0}.inqgrid{align-items:center;gap:4.5rem}}
 .frame img{height:auto;aspect-ratio:604/468;object-fit:cover}
+
+/* design rule: no decorative italic accents in headings */
+:is(h1,h2,h3) :is(em,i){font-style:normal!important;font-family:inherit!important}
+
+/* easy-to-tap contact links */
+:is(li,.cols)>a:is([href^="tel:"],[href^="mailto:"]){display:inline-flex;align-items:center;min-height:44px}
 </style>
 </head>
 <body>
@@ -359,7 +366,6 @@ fieldset{margin-bottom:1rem}
 <section class="hero" id="top">
   <div class="wrap">
     <div class="meta">
-      <p class="kicker rv">Hicksville, New York</p>
       <h1 data-split style="--d:.15s">Every child should have the chance <em>to dance.</em></h1>
       <p class="sub rv" style="--d:.7s">Ballet, tap, toe and jazz. All ages.</p>
       <a class="btn rv" style="--d:.85s" href="#inquire" data-go="inquire">Ask about classes <span class="arr" aria-hidden="true">→</span></a>
